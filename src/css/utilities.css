@@ -13,6 +13,10 @@
   border: 0;
 }
 
+/* .btn {
+  @apply rounded-none;
+} */
+ 
 /* button {
   border: none;
   margin: 0;

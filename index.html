@@ -8,17 +8,17 @@
     <link rel="stylesheet" href="./src/css/style.css" />
   </head>
   <body class="typography font-inter mx-auto flex flex-col items-center">
-    <section class="hero relative">
+    <section class="hero mb-16 flex flex-col items-center">
       <header
         class="item-center flex min-h-160 flex-col items-center rounded-br-[35px] rounded-bl-[35px] bg-linear-to-r from-[#d6fcfe] to-[#d6e6fe] text-center"
       >
         <img
-          src="/public/assets/images/logo.svg"
+          src="assets/images/logo.svg"
           alt="main logo"
           class="min-h-9 min-w-9 py-8"
         />
-        <h1 class="text-preset-2 w-[80%] pb-6">Body Mass Index Calculator</h1>
-        <p class="text-preset-6-regular w-[80%]">
+        <h1 class="text-preset-2 w-[85%] pb-6">Body Mass Index Calculator</h1>
+        <p class="text-preset-6-regular w-[85%]">
           Better understand your weight in relation to your height using our
           body mass index (BM) calculator. While BMI is not the sole determinant
           of a healthy weight, it offers a valuable starting point to evaluate
@@ -27,9 +27,82 @@
       </header>
       <form
         action="#"
-        class="absolute bottom-20 left-1/2 mx-auto w-[80%] translate-x-[-50%] border border-red-500 bg-white"
+        class="form mx-auto mt-[-8rem] flex w-[90%] flex-col items-center gap-y-6 rounded-2xl bg-white p-6 shadow-[16px_32px_56px_0px_rgba(143,174,207,0.25)]"
       >
-        <h2 class="pt-6 text-center">Enter your details below</h2>
+        <h2 class="form__title text-preset-4 text-center">
+          Enter your details below
+        </h2>
+        <div class="form__unit__selector text-preset-6-semibold flex gap-14">
+          <div class="flex items-center gap-4">
+            <input
+              type="radio"
+              id="metric"
+              name="measurement-metric"
+              value="metric"
+              class="radio-input"
+              aria-labelledby="metric-label"
+            />
+            <label id="metric-label" for="metric" class="radio-label">
+              Metric
+            </label>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <input
+              type="radio"
+              id="imperial"
+              name="measurement-imperial"
+              value="imperial"
+              class="radio-input"
+              aria-labelledby="imperial-label"
+            />
+            <label id="imperial-label" for="imperial" class="radio-label">
+              Imperial
+            </label>
+          </div>
+        </div>
+        <div class="form__input__height flex flex-col items-start">
+          <label for="height" class="text-preset-7-regular mb-2 text-gray-500"
+            >Height</label
+          >
+          <div class="text-preset-4 relative w-full">
+            <input
+              type="text"
+              id="height"
+              placeholder="0"
+              class="input-txt w-full rounded-xl border border-gray-500 p-6 text-gray-500"
+            />
+            <span
+              id="height-type"
+              class="absolute inset-y-0 right-6 flex items-center text-blue-500"
+              >cm</span
+            >
+          </div>
+        </div>
+        <div class="form__input__weight flex flex-col items-start">
+          <label for="weight" class="text-preset-7-regular mb-2 text-gray-500"
+            >Weight</label
+          >
+          <div class="text-preset-4 relative w-full">
+            <input
+              type="text"
+              id="weight"
+              placeholder="0"
+              class="input-txt w-full rounded-xl border border-gray-500 p-6 text-gray-500"
+            />
+            <span
+              id="weight-type"
+              class="absolute inset-y-0 right-6 flex items-center text-blue-500"
+              >kg</span
+            >
+          </div>
+        </div>
+        <div class="form__description rounded-xl bg-blue-500 p-8 text-white">
+          <h3 class="text-preset-4 pb-8">Welcome!</h3>
+          <p class="text-preset-7-regular">
+            Enter your height and weight and you’ll see your BMI result here
+          </p>
+        </div>
       </form>
     </section>
 
