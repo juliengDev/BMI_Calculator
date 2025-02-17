@@ -11,6 +11,7 @@ html {
 }
 body {
   min-height: 100dvh;
+  overflow-y: scroll;
   -webkit-font-smoothing: antialiased;
 }
 a:link,

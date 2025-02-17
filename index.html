@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Body Mass Index Calculator</title>
     <link rel="stylesheet" href="./src/css/style.css" />
   </head>
   <body class="typography font-inter mx-auto flex flex-col items-center">
@@ -15,9 +15,11 @@
         <img
           src="assets/images/logo.svg"
           alt="main logo"
-          class="min-h-9 min-w-9 py-8"
+          class="tablet:py-10 min-h-9 min-w-9 py-8"
         />
-        <h1 class="text-preset-2 w-[85%] pb-6">Body Mass Index Calculator</h1>
+        <h1 class="text-preset-2 w-[85%] pb-6">
+          Body Mass<span class="block">Index Calculator</span>
+        </h1>
         <p class="text-preset-6-regular w-[85%]">
           Better understand your weight in relation to your height using our
           body mass index (BM) calculator. While BMI is not the sole determinant
@@ -27,17 +29,21 @@
       </header>
       <form
         action="#"
-        class="form mx-auto mt-[-8rem] flex w-[90%] flex-col items-center gap-y-6 rounded-2xl bg-white p-6 shadow-[16px_32px_56px_0px_rgba(143,174,207,0.25)]"
+        class="form tablet:-mt-60 tablet:gap-y-8 tablet:p-8 mx-auto -mt-36 flex w-[90%] flex-col items-center gap-y-6 rounded-2xl bg-white p-6 shadow-[16px_32px_56px_0px_rgba(143,174,207,0.25)]"
       >
-        <h2 class="form__title text-preset-4 text-center">
+        <h2
+          class="form__title text-preset-4 tablet:self-start tablet:mb-8 mb-6"
+        >
           Enter your details below
         </h2>
-        <div class="form__unit__selector text-preset-6-semibold flex gap-14">
-          <div class="flex items-center gap-4">
+        <div
+          class="form__unit__selector text-preset-6-semibold tablet:w-full tablet:justify-center flex gap-14"
+        >
+          <div class="tablet:flex-1 flex items-center gap-4">
             <input
               type="radio"
               id="metric"
-              name="measurement-metric"
+              name="measurement"
               value="metric"
               class="radio-input"
               aria-labelledby="metric-label"
@@ -47,11 +53,11 @@
             </label>
           </div>
 
-          <div class="flex items-center gap-4">
+          <div class="tablet:flex-1 flex items-center gap-4">
             <input
               type="radio"
               id="imperial"
-              name="measurement-imperial"
+              name="measurement"
               value="imperial"
               class="radio-input"
               aria-labelledby="imperial-label"
@@ -61,111 +67,146 @@
             </label>
           </div>
         </div>
-        <div class="form__input__height flex flex-col items-start">
-          <label for="height" class="text-preset-7-regular mb-2 text-gray-500"
-            >Height</label
-          >
-          <div class="text-preset-4 relative w-full">
-            <input
-              type="text"
-              id="height"
-              placeholder="0"
-              class="input-txt w-full rounded-xl border border-gray-500 p-6 text-gray-500"
-            />
-            <span
-              id="height-type"
-              class="absolute inset-y-0 right-6 flex items-center text-blue-500"
-              >cm</span
+        <div class="input__container tablet:w-full tablet:flex tablet:gap-x-6">
+          <div class="form__input__height flex flex-1 flex-col items-start">
+            <label for="height" class="text-preset-7-regular mb-2 text-gray-500"
+              >Height</label
             >
+            <div class="text-preset-4 relative w-full">
+              <input
+                type="number"
+                id="height"
+                placeholder="0"
+                class="input-txt w-full rounded-xl border border-gray-500 p-6 placeholder:text-gray-500"
+              />
+              <span
+                id="height-type"
+                class="absolute inset-y-0 right-6 flex items-center text-blue-500"
+                >cm</span
+              >
+            </div>
+          </div>
+          <div class="form__input__weight flex flex-1 flex-col items-start">
+            <label for="weight" class="text-preset-7-regular mb-2"
+              >Weight</label
+            >
+            <div class="text-preset-4 relative w-full">
+              <input
+                type="number"
+                id="weight"
+                placeholder="0"
+                class="input-txt w-full rounded-xl border border-gray-500 p-6 placeholder:text-gray-500"
+              />
+              <span
+                id="weight-type"
+                class="absolute inset-y-0 right-6 flex items-center text-blue-500"
+                >kg</span
+              >
+            </div>
           </div>
         </div>
-        <div class="form__input__weight flex flex-col items-start">
-          <label for="weight" class="text-preset-7-regular mb-2 text-gray-500"
-            >Weight</label
-          >
-          <div class="text-preset-4 relative w-full">
-            <input
-              type="text"
-              id="weight"
-              placeholder="0"
-              class="input-txt w-full rounded-xl border border-gray-500 p-6 text-gray-500"
-            />
-            <span
-              id="weight-type"
-              class="absolute inset-y-0 right-6 flex items-center text-blue-500"
-              >kg</span
-            >
-          </div>
-        </div>
-        <div class="form__description rounded-xl bg-blue-500 p-8 text-white">
-          <h3 class="text-preset-4 pb-8">Welcome!</h3>
+
+        <div
+          class="form__description tablet:w-full tablet:rounded-r-full rounded-xl bg-blue-500 p-8 text-blue-50"
+        >
+          <h3 class="text-preset-4 pb-8 text-blue-50">Welcome!</h3>
           <p class="text-preset-7-regular">
             Enter your height and weight and you’ll see your BMI result here
           </p>
         </div>
       </form>
     </section>
-    <section class="result mx-auto mb-15 w-[85%]">
+    <section
+      class="result tablet:flex tablet:w-full tablet:gap-x-18 mx-auto mb-15 w-[85%] overflow-hidden"
+    >
       <img
         src="assets/images/image-man-eating.webp"
         alt="man eating japanese maki"
-        class="mb-12"
+        class="tablet:w-1/2 tablet:-ml-16 mb-12 h-auto w-full object-cover"
       />
-      <h2 class="text-preset-3 mb-8">What your BMI result means</h2>
-      <p class="text-preset-6-regular">
-        A BMI range of 18.5 to 24.9 is considered a 'healthy weight.'
-        Maintaining a healthy weight may lower your chances of experiencing
-        health issues later on, such as obesity and type 2 diabetes. Aim for a
-        nutritious diet with reduced fat and sugar content, incorporating ample
-        fruits and vegetables. Additionally, strive for regular physical
-        activity, ideally about 30 minutes daily for five days a week.
-      </p>
+      <div
+        class="result__container tablet:pt-12 tablet:w-[331px] flex-col items-center justify-center"
+      >
+        <h2 class="text-preset-3 mb-8">
+          What your BMI result <span class="tablet:block">means</span>
+        </h2>
+        <p class="text-preset-6-regular">
+          A BMI range of 18.5 to 24.9 is considered a 'healthy weight.'
+          Maintaining a healthy weight may lower your chances of experiencing
+          health issues later on, such as obesity and type 2 diabetes. Aim for a
+          nutritious diet with reduced fat and sugar content, incorporating
+          ample fruits and vegetables. Additionally, strive for regular physical
+          activity, ideally about 30 minutes daily for five days a week.
+        </p>
+      </div>
     </section>
-    <section class="tips mx-auto mb-20 flex w-[85%] flex-col gap-10">
-      <div class="tips__container flex flex-col items-start">
+    <section
+      class="tips tablet:w-[90%] tablet:mb-40 mx-auto mb-20 flex w-[85%] flex-col gap-10"
+    >
+      <div
+        class="tips__container tablet:flex-row tablet:items-center tablet:gap-x-10 flex flex-col items-start"
+      >
         <img
-          class="mb-8"
+          class="tablet:mb-0 mb-8"
           src="/assets/images/icon-eating.svg"
           alt="food bowl"
         />
-        <h3 class="text-preset-4 mb-6">Healthy eating</h3>
-        <p class="text-preset-6-regular">
-          Healthy eating promotes weight control, disease prevention, better
-          digestion, immunity, mental clarity, and mood.
-        </p>
+        <div class="container__description">
+          <h3 class="text-preset-4 mb-6">Healthy eating</h3>
+          <p class="text-preset-6-regular">
+            Healthy eating promotes weight control, disease prevention, better
+            digestion, immunity, mental clarity, and mood.
+          </p>
+        </div>
       </div>
-      <div class="tips__container flex flex-col items-start">
+      <div
+        class="tips__container tablet:flex-row tablet:items-center tablet:gap-x-10 flex flex-col items-start"
+      >
         <img
-          class="mb-8"
+          class="tablet:mb-0 mb-8"
           src="/assets/images/icon-exercise.svg"
           alt="food bowl"
         />
-        <h3 class="text-preset-4 mb-6">Regular exercise</h3>
-        <p class="text-preset-6-regular">
-          Exercise improves fitness, aids weight control, elevates mood, and
-          reduces disease risk, fostering wellness and longevity.
-        </p>
+        <div class="container__description">
+          <h3 class="text-preset-4 mb-6">Regular exercise</h3>
+          <p class="text-preset-6-regular">
+            Exercise improves fitness, aids weight control, elevates mood, and
+            reduces disease risk, fostering wellness and longevity.
+          </p>
+        </div>
       </div>
-      <div class="tips__container flex flex-col items-start">
-        <img class="mb-8" src="/assets/images/icon-sleep.svg" alt="food bowl" />
-        <h3 class="text-preset-4 mb-6">Adequate sleep</h3>
-        <p class="text-preset-6-regular">
-          Sleep enhances mental clarity, emotional stability, and physical
-          wellness, promoting overall restoration and rejuvenation.
-        </p>
+      <div
+        class="tips__container tablet:flex-row tablet:items-center tablet:gap-x-10 flex flex-col items-start"
+      >
+        <img
+          class="tablet:mb-0 mb-8"
+          src="/assets/images/icon-sleep.svg"
+          alt="food bowl"
+        />
+        <div class="container__description">
+          <h3 class="text-preset-4 mb-6">Adequate sleep</h3>
+          <p class="text-preset-6-regular">
+            Sleep enhances mental clarity, emotional stability, and physical
+            wellness, promoting overall restoration and rejuvenation.
+          </p>
+        </div>
       </div>
     </section>
     <section
       class="limitations-bmi mx-auto mb-24 flex w-[85%] flex-col gap-8 text-center"
     >
       <h2 class="text-preset-3">Limitations of BMI</h2>
-      <p class="text-preset-6-regular text-grey-500">
+      <p
+        class="text-preset-6-regular text-grey-500 tablet:w-2xl tablet:mx-auto"
+      >
         Although BMI is often a practical indicator of healthy weight, it is not
         suited for every person. Specific groups should carefully consider their
         BMI outcomes, and in certain cases, the measurement may not be
         beneficial to use.
       </p>
-      <div class="limitations-container flex flex-col gap-4">
+      <div
+        class="limitations-container tablet:grid-cols-2 tablet:gap-6 grid gap-4"
+      >
         <div
           class="gender rounded-2xl p-8 shadow-[16px_8px_24px_0px_rgba(143,174,207,0.25)]"
         >
@@ -216,8 +257,9 @@
             health risks for both mother and child.
           </p>
         </div>
+
         <div
-          class="gender rounded-2xl p-8 shadow-[16px_8px_24px_0px_rgba(143,174,207,0.25)]"
+          class="gender tablet:col-span-2 tablet:mx-auto tablet:w-1/2 rounded-2xl p-8 shadow-[16px_8px_24px_0px_rgba(143,174,207,0.25)]"
         >
           <div class="gender__header flex items-center gap-4 pb-4">
             <img src="/assets/images/icon-race.svg" alt="gender icon" />
