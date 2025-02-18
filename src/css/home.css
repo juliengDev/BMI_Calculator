@@ -46,7 +46,7 @@
 }
 .attribution__credit {
   font-weight: 800;
-  color: var(--color-dark-raspberry) !important;
+  color: var(--color-blue-500) !important;
 }
 .attribution__credit a {
   cursor: pointer;
