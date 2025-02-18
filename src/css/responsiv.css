@@ -1,7 +1,7 @@
 @theme {
   --breakpoint-tablet: 48rem;
   --breakpoint-laptop: 60rem;
-  --breakpoint-desktop: 90rem;
+  --breakpoint-desktop: 80rem;
 }
 
 /* 

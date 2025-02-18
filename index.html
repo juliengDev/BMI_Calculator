@@ -7,20 +7,26 @@
     <title>Body Mass Index Calculator</title>
     <link rel="stylesheet" href="./src/css/style.css" />
   </head>
-  <body class="typography font-inter mx-auto flex flex-col items-center">
-    <section class="hero mb-16 flex flex-col items-center">
+  <body
+    class="typography font-inter desktop:items-stretch mx-auto flex flex-col items-center max-w-[1920px]"
+  >
+    <section
+      class="hero desktop:relative desktop:max-w-[62rem] desktop:items-baseline mb-16 desktop:mb-20 flex flex-col items-center "
+    >
       <header
-        class="item-center flex min-h-160 flex-col items-center rounded-br-[35px] rounded-bl-[35px] bg-linear-to-r from-[#d6fcfe] to-[#d6e6fe] text-center"
+        class="desktop:items-baseline desktop:rounded-none desktop:min-w-[62rem] flex min-h-160 desktop:pl-35 flex-col items-center rounded-br-[35px] rounded-bl-[35px] bg-linear-to-r from-[#d6fcfe]/0 to-[#d6e6fe]/100 desktop:text-left text-center"
       >
         <img
           src="assets/images/logo.svg"
           alt="main logo"
-          class="tablet:py-10 min-h-9 min-w-9 py-8"
+          class="tablet:py-10 min-h-9 min-w-9 py-8 desktop:pt-22.5 desktop:pb-24"
         />
-        <h1 class="text-preset-2 w-[85%] pb-6">
-          Body Mass<span class="block">Index Calculator</span>
+        <h1 class="text-preset-2 desktop:w-auto w-[85%] pb-6">
+          Body Mass<span class="block"> </span>
+            Index Calculator</span
+          >
         </h1>
-        <p class="text-preset-6-regular w-[85%]">
+        <p class="text-preset-6-regular w-[85%] desktop:max-w-[29rem]">
           Better understand your weight in relation to your height using our
           body mass index (BM) calculator. While BMI is not the sole determinant
           of a healthy weight, it offers a valuable starting point to evaluate
@@ -29,7 +35,7 @@
       </header>
       <form
         action="#"
-        class="form tablet:-mt-60 tablet:gap-y-8 tablet:p-8 mx-auto -mt-36 flex w-[90%] flex-col items-center gap-y-6 rounded-2xl bg-white p-6 shadow-[16px_32px_56px_0px_rgba(143,174,207,0.25)]"
+        class="form desktop:mt-0 desktop:-right-70 desktop:top-44  desktop:absolute desktop:max-w-[35rem] tablet:-mt-60 tablet:gap-y-8 tablet:p-8 mx-auto -mt-36 flex w-[90%] flex-col items-center gap-y-6 rounded-2xl bg-white p-6 shadow-[16px_32px_56px_0px_rgba(143,174,207,0.25)]"
       >
         <h2
           class="form__title text-preset-4 tablet:self-start tablet:mb-8 mb-6"
@@ -117,17 +123,17 @@
       </form>
     </section>
     <section
-      class="result tablet:flex tablet:w-full tablet:gap-x-18 mx-auto mb-15 w-[85%] overflow-hidden"
+      class="result tablet:flex tablet:w-full desktop:gap-x-32 tablet:gap-x-18 mx-auto mb-15 w-[85%] overflow-hidden desktop:justify-center desktop:items-center"
     >
       <img
         src="assets/images/image-man-eating.webp"
         alt="man eating japanese maki"
-        class="tablet:w-1/2 tablet:-ml-16 mb-12 h-auto w-full object-cover"
+        class="tablet:w-1/2 tablet:-ml-16 mb-12 h-auto w-full object-cover desktop:max-w-[35.25rem]"
       />
       <div
-        class="result__container tablet:pt-12 tablet:w-[331px] flex-col items-center justify-center"
+        class="result__container tablet:pt-14 desktop:w-[465px] tablet:w-[331px] flex-col items-center justify-center"
       >
-        <h2 class="text-preset-3 mb-8">
+        <h2 class="text-preset-3 mb-8  desktop:text-5xl">
           What your BMI result <span class="tablet:block">means</span>
         </h2>
         <p class="text-preset-6-regular">
@@ -141,10 +147,10 @@
       </div>
     </section>
     <section
-      class="tips tablet:w-[90%] tablet:mb-40 mx-auto mb-20 flex w-[85%] flex-col gap-10"
+      class="tips tablet:w-[90%] desktop:mx-35 tablet:mb-40 mx-auto mb-20 flex w-[85%] flex-col gap-10 desktop:flex-row"
     >
       <div
-        class="tips__container tablet:flex-row tablet:items-center tablet:gap-x-10 flex flex-col items-start"
+        class="tips__container desktop:flex-col desktop:gap-y-12 desktop:items-start tablet:flex-row tablet:items-center tablet:gap-x-10 flex flex-col items-start "
       >
         <img
           class="tablet:mb-0 mb-8"
@@ -160,7 +166,7 @@
         </div>
       </div>
       <div
-        class="tips__container tablet:flex-row tablet:items-center tablet:gap-x-10 flex flex-col items-start"
+        class="desktop:flex-col desktop:gap-y-12 desktop:items-start tips__container tablet:flex-row tablet:items-center tablet:gap-x-10 flex flex-col items-start"
       >
         <img
           class="tablet:mb-0 mb-8"
@@ -176,7 +182,7 @@
         </div>
       </div>
       <div
-        class="tips__container tablet:flex-row tablet:items-center tablet:gap-x-10 flex flex-col items-start"
+        class="desktop:flex-col desktop:gap-y-12 desktop:items-start tips__container tablet:flex-row tablet:items-center tablet:gap-x-10 flex flex-col items-start"
       >
         <img
           class="tablet:mb-0 mb-8"
@@ -193,22 +199,22 @@
       </div>
     </section>
     <section
-      class="limitations-bmi mx-auto mb-24 flex w-[85%] flex-col gap-8 text-center"
+      class="limitations-bmi mx-auto mb-24 w-[85%] text-center grid  grid-cols-1 tablet:grid-cols-4  gap-4  desktop:grid-cols-12 justify-items-center"
     >
-      <h2 class="text-preset-3">Limitations of BMI</h2>
-      <p
-        class="text-preset-6-regular text-grey-500 tablet:w-2xl tablet:mx-auto"
-      >
-        Although BMI is often a practical indicator of healthy weight, it is not
-        suited for every person. Specific groups should carefully consider their
-        BMI outcomes, and in certain cases, the measurement may not be
-        beneficial to use.
-      </p>
-      <div
-        class="limitations-container tablet:grid-cols-2 tablet:gap-6 grid gap-4"
-      >
+      <div class="limitations_description desktop:text-left  desktop:col-span-6 desktop:row-span-1 tablet:col-span-full tablet:mx-auto">
+        <h2 class="text-preset-3 mb-8 desktop:text-5xl ">Limitations of BMI</h2>
+        <p   
+          class="text-preset-6-regular text-grey-500 tablet:max-w-[564px] mb-14 "
+        >
+          Although BMI is often a practical indicator of healthy weight, it is not
+          suited for every person. Specific groups should carefully consider their
+          BMI outcomes, and in certain cases, the measurement may not be
+          beneficial to use.
+        </p>
+      </div>
+      
         <div
-          class="gender rounded-2xl p-8 shadow-[16px_8px_24px_0px_rgba(143,174,207,0.25)]"
+          class="gender  max-w-[365px] w-fit h-fit rounded-2xl p-8 shadow-[16px_8px_24px_0px_rgba(143,174,207,0.25)] tablet:col-span-2 desktop:col-start-8 desktop:col-span-3 desktop:row-start-1 desktop:row-span-1"
         >
           <div class="gender__header flex items-center gap-4 pb-4">
             <img src="/assets/images/icon-gender.svg" alt="gender icon" />
@@ -221,7 +227,7 @@
           </p>
         </div>
         <div
-          class="gender rounded-2xl p-8 shadow-[16px_8px_24px_0px_rgba(143,174,207,0.25)]"
+          class="gender tablet:col-span-2 max-w-[365px] w-fit rounded-2xl p-8 shadow-[16px_8px_24px_0px_rgba(143,174,207,0.25)] desktop:col-start-6 desktop:col-span-3 desktop:row-start-3 desktop:row-span-1"
         >
           <div class="gender__header flex items-center gap-4 pb-4">
             <img src="/assets/images/icon-age.svg" alt="gender icon" />
@@ -233,7 +239,7 @@
           </p>
         </div>
         <div
-          class="gender rounded-2xl p-8 shadow-[16px_8px_24px_0px_rgba(143,174,207,0.25)]"
+          class="gender tablet:col-span-2 max-w-[365px] w-fit  rounded-2xl p-8 shadow-[16px_8px_24px_0px_rgba(143,174,207,0.25)] desktop:col-start-9 desktop:col-span-3 desktop:row-start-3 desktop:row-span-1"
         >
           <div class="gender__header flex items-center gap-4 pb-4">
             <img src="/assets/images/icon-muscle.svg" alt="gender icon" />
@@ -245,7 +251,7 @@
           </p>
         </div>
         <div
-          class="gender rounded-2xl p-8 shadow-[16px_8px_24px_0px_rgba(143,174,207,0.25)]"
+          class="gender tablet:col-span-2 max-w-[365px] w-fit   rounded-2xl p-8 shadow-[16px_8px_24px_0px_rgba(143,174,207,0.25)] desktop:col-start-5 desktop:col-span-3 desktop:row-start-5 desktop:row-span-1"
         >
           <div class="gender__header flex items-center gap-4 pb-4">
             <img src="/assets/images/icon-pregnancy.svg" alt="gender icon" />
@@ -259,7 +265,7 @@
         </div>
 
         <div
-          class="gender tablet:col-span-2 tablet:mx-auto tablet:w-1/2 rounded-2xl p-8 shadow-[16px_8px_24px_0px_rgba(143,174,207,0.25)]"
+          class="gender tablet:col-span-2 max-w-[365px] w-fit  tablet:col-start-2 rounded-2xl p-8 shadow-[16px_8px_24px_0px_rgba(143,174,207,0.25)] desktop:col-start-8 desktop:col-span-3 desktop:row-start-5 desktop:row-span-1"
         >
           <div class="gender__header flex items-center gap-4 pb-4">
             <img src="/assets/images/icon-race.svg" alt="gender icon" />
@@ -271,7 +277,7 @@
             advised to discuss this with your GP or practice nurse.
           </p>
         </div>
-      </div>
+     
     </section>
 
     <!-- <footer class="attribution">
