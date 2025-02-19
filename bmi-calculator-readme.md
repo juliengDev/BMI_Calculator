@@ -1,13 +1,12 @@
 # BMI Calculator
 
-![Design preview for the BMI Calculator](./preview.jpg)
+![Design preview for the BMI Calculator](./design/desktop-preview.jpg)
 
 ## Overview
 
 An interactive and accessible **Body Mass Index (BMI) Calculator** that provides instant health insights and weight classification!
 
 🔍 **Key Features:**
-
 - **Dual Unit System** supporting both metric and imperial measurements
 - **Instant BMI Calculation** with real-time updates
 - **Health Classification** with personalized weight range
@@ -19,7 +18,6 @@ An interactive and accessible **Body Mass Index (BMI) Calculator** that provides
 ## ♿️ Accessibility Focus
 
 Making health information accessible to everyone:
-
 - **Intuitive Form Controls** with clear labels
 - **Real-time Feedback** for better user interaction
 - **Keyboard Navigation** support
@@ -59,7 +57,7 @@ Making health information accessible to everyone:
 
 ## 🚀 Live Demo
 
-🔗 [BMI Calculator Demo](https://juliengdev-bmi.netlify.app/)
+🔗 [BMI Calculator Demo](your-demo-link-here)
 
 ---
 
@@ -68,26 +66,22 @@ Making health information accessible to everyone:
 Get started with these simple steps:
 
 1. **Clone the repository**
-
    ```bash
    git clone [your-repo-url]
    cd bmi-calculator
    ```
 
 2. **Install dependencies**
-
    ```bash
    npm install
    ```
 
 3. **Start development server**
-
    ```bash
    npm run dev
    ```
 
 4. **Build for production**
-
    ```bash
    npm run build
    ```
@@ -102,7 +96,6 @@ Get started with these simple steps:
 ## 🧮 BMI Classifications
 
 The calculator provides these weight classifications:
-
 - **Underweight:** BMI less than 18.5
 - **Healthy weight:** BMI 18.5 to 24.9
 - **Overweight:** BMI 25 to 29.9
@@ -113,26 +106,40 @@ The calculator provides these weight classifications:
 ## 💻 Development Notes
 
 ### Project Structure
-
 ```
 bmi-calculator/
 ├── src/
 │   ├── components/
 │   ├── data/
-│   ├── pages/
-│   ├── css/
+│   ├── styles/
 │   └── main.ts
 ├── public/
 └── index.html
 ```
 
 ### Key Components
-
 - Unit conversion system
 - BMI calculation logic
 - Dynamic UI updates
 - Form validation
 - Responsive layout management
+
+---
+
+## 📱 Responsive Breakpoints
+
+- **Mobile:** < 768px
+- **Tablet:** 768px - 1024px
+- **Desktop:** > 1024px
+
+---
+
+## 🎨 Color Palette
+
+- Primary Blue: `#345FF6`
+- Gunmetal: `#253347`
+- Dark Electric Blue: `#5E6E85`
+- Pure White: `#FFFFFF`
 
 ---
 
@@ -148,12 +155,18 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
 
-## 👨‍💻 Author
+## 📄 License
 
-- 🌐 **Portfolio** - [Julien Gilbert](https://juliengilbert.com/)
-- 🏆 **GitHub** - [@juliengDev](https://github.com/juliengDev)
-- 💼 **LinkedIn** - [Julien Gilbert](https://www.linkedin.com/in/julien-gilbert-reactjs/)
+This project is released under the MIT License. See the LICENSE file for details.
 
 ---
 
-🎯 _Feel free to reach out if you have any questions or suggestions!_ 🚀
+## 👨‍💻 Author
+
+- Your Name
+- GitHub: [@YourGitHub](https://github.com/YourGitHub)
+- Portfolio: [your-portfolio.com](https://your-portfolio.com)
+
+---
+
+🎯 *Feel free to reach out if you have any questions or suggestions!* 🚀

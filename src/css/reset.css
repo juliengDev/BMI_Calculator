@@ -23,15 +23,7 @@ a:active {
   cursor: pointer; /* or pointer if you want to keep the default hand cursor */
 }
 
-/* 5. Improve media defaults */
-/* img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-} */
+
 
 /* 6. Inherit fonts for form controls */
 input,
