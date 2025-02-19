@@ -53,6 +53,7 @@
               value="metric"
               class="radio-input"
               aria-labelledby="metric-label"
+              checked
             />
             <label id="metric-label" for="metric" class="radio-label">
               Metric
@@ -73,15 +74,15 @@
             </label>
           </div>
         </div>
-        <div class="input__container tablet:w-full tablet:flex tablet:gap-x-6">
+        <div id="metricContainer" class="input__container tablet:w-full tablet:flex tablet:gap-x-6">
           <div class="form__input__height flex flex-1 flex-col items-start">
-            <label for="height" class="text-preset-7-regular mb-2 text-gray-500"
+            <label for="heightCm" class="text-preset-7-regular mb-2 text-gray-500"
               >Height</label
             >
             <div class="text-preset-4 relative w-full">
               <input
                 type="number"
-                id="height"
+                id="heightCm"
                 placeholder="0"
                 class="input-txt w-full rounded-xl border border-gray-500 p-6 placeholder:text-gray-500"
               />
@@ -93,13 +94,13 @@
             </div>
           </div>
           <div class="form__input__weight flex flex-1 flex-col items-start">
-            <label for="weight" class="text-preset-7-regular mb-2"
+            <label for="weightKg" class="text-preset-7-regular mb-2"
               >Weight</label
             >
             <div class="text-preset-4 relative w-full">
               <input
                 type="number"
-                id="weight"
+                id="weightKg"
                 placeholder="0"
                 class="input-txt w-full rounded-xl border border-gray-500 p-6 placeholder:text-gray-500"
               />
@@ -111,14 +112,98 @@
             </div>
           </div>
         </div>
+        <div id="imperialHeightContainer" class="input__container tablet:w-full tablet:flex tablet:gap-x-6 hidden">
+          <div class="form__input__height flex flex-1 flex-col items-start">
+            <label for="heightFt" class="text-preset-7-regular mb-2 text-gray-500"
+              >Height</label
+            >
+            <div class="text-preset-4 relative w-full">
+              <input
+                type="number"
+                id="heightFt"
+                placeholder="0"
+                class="input-txt w-full rounded-xl border border-gray-500 p-6 placeholder:text-gray-500"
+              />
+              <span
+                id="height-type"
+                class="absolute inset-y-0 right-6 flex items-center text-blue-500"
+                >ft</span
+              >
+            </div>
+          </div>
+          <div class="form__input__weight flex flex-1 flex-col items-start">
+            <label for="heightIn" class="text-preset-7-regular mb-2 invisible"
+              >Height</label
+            >
+            <div class="text-preset-4 relative w-full">
+              <input
+                type="number"
+                id="heightIn"
+                placeholder="0"
+                class="input-txt w-full rounded-xl border border-gray-500 p-6 placeholder:text-gray-500"
+              />
+              <span
+                id="weight-type"
+                class="absolute inset-y-0 right-6 flex items-center text-blue-500"
+                >in</span
+              >
+            </div>
+          </div>
+        </div>
+        <div id="imperialWeightContainer" class="input__container tablet:w-full tablet:flex tablet:gap-x-6 hidden">
+          <div class="form__input__height flex flex-1 flex-col items-start">
+            <label for="weightSt" class="text-preset-7-regular mb-2 text-gray-500"
+              >Weight</label
+            >
+            <div class="text-preset-4 relative w-full">
+              <input
+                type="number"
+                id="weightSt"
+                placeholder="0"
+                class="input-txt w-full rounded-xl border border-gray-500 p-6 placeholder:text-gray-500"
+              />
+              <span
+                id="height-type"
+                class="absolute inset-y-0 right-6 flex items-center text-blue-500"
+                >st</span
+              >
+            </div>
+          </div>
+          <div class="form__input__weight flex flex-1 flex-col items-start">
+            <label for="weightLbs" class="text-preset-7-regular mb-2 invisible"
+              >Weight</label
+            >
+            <div class="text-preset-4 relative w-full">
+              <input
+                type="number"
+                id="weightLbs"
+                placeholder="0"
+                class="input-txt w-full rounded-xl border border-gray-500 p-6 placeholder:text-gray-500"
+              />
+              <span
+                id="weight-type"
+                class="absolute inset-y-0 right-6 flex items-center text-blue-500"
+                >lbs</span
+              >
+            </div>
+          </div>
+        </div>
 
         <div
           class="form__description tablet:w-full tablet:rounded-r-full rounded-xl bg-blue-500 p-8 text-blue-50"
         >
-          <h3 class="text-preset-4 pb-8 text-blue-50">Welcome!</h3>
-          <p class="text-preset-7-regular">
-            Enter your height and weight and you’ll see your BMI result here
-          </p>
+          <div id="welcome" class="hidden">
+            <h3 class="text-preset-4 pb-8 text-blue-50">Welcome!</h3>
+            <p class="text-preset-7-regular">
+              Enter your height and weight and you’ll see your BMI result here
+            </p>
+            
+          </div>
+          <div id="bmi-info" class=" grid grid-cols-2">
+            <p class="text-preset-6-regular text-white pb-2">Your BMI is...</p>
+            <p id="result" class="text-preset-1 text-white row-start-2 tracking-normal">22.5</p>
+            <p class="col-start-2 row-span-2 text-white">Your BMI suggests you’re a <span id="weight-categorie">healthy weight</span>. Your ideal weight is between <span id="weight-range">63.3kgs - 85.2kgs.</span></p>
+          </div>
         </div>
       </form>
     </section>
@@ -136,7 +221,7 @@
         <h2 class="text-preset-3 mb-8  desktop:text-5xl">
           What your BMI result <span class="block">means</span>
         </h2>
-        <p class="text-preset-6-regular mb-15">
+        <p id="bmi-advise" class="text-preset-6-regular mb-15">
           A BMI range of 18.5 to 24.9 is considered a 'healthy weight.'
           Maintaining a healthy weight may lower your chances of experiencing
           health issues later on, such as obesity and type 2 diabetes. Aim for a
@@ -280,11 +365,11 @@
      
     </section>
 
-    <footer class="attribution w-[85%]">
+    <footer class="attribution w-full mx-auto">
       <p>Challenge by</p>
       <a
         class="attribution__credit"
-        href="https://www.frontendmentor.io?ref=challenge"
+        href="https://www.frontendmentor.io/profile/juliengDev"
         target="_blank"
         >Frontend Mentor</a
       >
