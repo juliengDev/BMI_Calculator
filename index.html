@@ -75,7 +75,7 @@
           </div>
         </div>
         <div id="metricContainer" class="input__container tablet:w-full tablet:flex tablet:gap-x-6">
-          <div class="form__input__height flex flex-1 flex-col items-start">
+          <div class="form__input__height flex flex-1 flex-col items-start mb-4" >
             <label for="heightCm" class="text-preset-7-regular mb-2 text-gray-500"
               >Height</label
             >
@@ -192,17 +192,19 @@
         <div
           class="form__description tablet:w-full tablet:rounded-r-full rounded-xl bg-blue-500 p-8 text-blue-50"
         >
-          <div id="welcome" class="hidden">
+          <div id="welcome" class="max-w-64 tablet:max-w-full">
             <h3 class="text-preset-4 pb-8 text-blue-50">Welcome!</h3>
             <p class="text-preset-7-regular">
               Enter your height and weight and you’ll see your BMI result here
             </p>
             
           </div>
-          <div id="bmi-info" class=" grid grid-cols-2">
-            <p class="text-preset-6-regular text-white pb-2">Your BMI is...</p>
-            <p id="result" class="text-preset-1 text-white row-start-2 tracking-normal">22.5</p>
-            <p class="col-start-2 row-span-2 text-white">Your BMI suggests you’re a <span id="weight-categorie">healthy weight</span>. Your ideal weight is between <span id="weight-range">63.3kgs - 85.2kgs.</span></p>
+          <div  id="bmi-info" class="hidden">
+            <div  class=" grid gap-4 grid-cols-1 tablet:grid-cols-2 max-w-64 tablet:max-w-full">
+              <p class="text-preset-6-regular text-white pb-2">Your BMI is...</p>
+              <p id="result" class="text-preset-1 text-white row-start-2 tracking-normal">22.5</p>
+              <p class="tablet:col-start-2 tablet:row-span-2 text-white">Your BMI suggests you’re a <span id="weight-categorie">healthy weight</span>. Your ideal weight is between <span id="weight-range">63.3kgs - 85.2kgs.</span></p>
+            </div>
           </div>
         </div>
       </form>

@@ -5,6 +5,8 @@ const resultTxtEl = document.getElementById("result") as HTMLParagraphElement;
 const weightRangeTxtEl = document.getElementById("weight-range") as HTMLSpanElement;
 const weightCategorieTxtEl = document.getElementById("weight-categorie") as HTMLSpanElement;
 const bmiAdviseTxtEl = document.getElementById("bmi-advise") as HTMLParagraphElement;
+const welcomeTxtEl = document.getElementById("welcome") as HTMLDivElement;
+const bmiInfoTxtEl = document.getElementById("bmi-info") as HTMLDivElement;
 
 // Input elements - Metric
 const metricRadioInputEl = document.getElementById("metric") as HTMLInputElement;
@@ -40,6 +42,26 @@ const displayUnits = () => {
   }
 };
 
+// Function to check whether all the necessary fields have been filled in
+const areInputsFilled = (): boolean => {
+  if (metricRadioInputEl.checked) {
+    return !!heightCmInputEl.value && parseFloat(heightCmInputEl.value) > 0 && !!weightKgInputEl.value && parseFloat(weightKgInputEl.value) > 0;
+  } else if (imperialRadioInputEl.checked) {
+    return !!heightFtInputEl.value && parseFloat(heightFtInputEl.value) > 0 && !!heightInInputEl.value && !!weightStInputEl.value && parseFloat(weightStInputEl.value) > 0 && !!weightLbsInputEl.value;
+  }
+  return false;
+};
+
+// Function to manage the display of sections
+const toggleDisplaySections = () => {
+  if (areInputsFilled()) {
+    welcomeTxtEl.classList.add("hidden");
+    bmiInfoTxtEl.classList.remove("hidden");
+  } else {
+    welcomeTxtEl.classList.remove("hidden");
+    bmiInfoTxtEl.classList.add("hidden");
+  }
+};
 // Conversion functions
 const convertImperialToMetric = {
   height: (ft: number, inches: number): number => {
@@ -92,6 +114,13 @@ const handleInput = () => {
     heightInCm = parseFloat(heightCmInputEl.value) || 0;
     weightInKg = parseFloat(weightKgInputEl.value) || 0;
   }
+
+ // Check and update the display
+  toggleDisplaySections();
+
+  // Continue only if inputs are valid
+  if (!areInputsFilled()) return;
+
   // Calculate BMI using metric values
   const bmiResult = calculateMetricBMI(heightInCm, weightInKg);
 
@@ -128,6 +157,7 @@ const handleInput = () => {
   weightCategorieTxtEl.textContent = category.type;
   weightRangeTxtEl.textContent = weightRangeText;
   bmiAdviseTxtEl.textContent = category.advise;
+  
 };
 
 // Input calculation function
@@ -169,8 +199,15 @@ const validateImperialWeight = () => {
 };
 
 /* Event Listener */
-metricRadioInputEl.addEventListener("click", displayUnits);
-imperialRadioInputEl.addEventListener("click", displayUnits);
+metricRadioInputEl.addEventListener("click", () => {
+  displayUnits();
+  toggleDisplaySections();
+});
+
+imperialRadioInputEl.addEventListener("click", () => {
+  displayUnits();
+  toggleDisplaySections();
+});
 
 // Metric input listeners
 heightCmInputEl.addEventListener("input", handleInput);
@@ -191,3 +228,5 @@ weightLbsInputEl.addEventListener("input", () => {
   validateImperialWeight();
   handleInput();
 });
+// Display initialisation
+toggleDisplaySections();
